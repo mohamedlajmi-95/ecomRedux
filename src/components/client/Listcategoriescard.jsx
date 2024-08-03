@@ -1,27 +1,24 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
-  getScategories,
+  getCategoriesPagination,
   setLimit,
   setPage,
-  getScategoriesPagination,
-} from "../../../features/scategorieSlice";
-import { useDispatch, useSelector } from "react-redux";
-
-import Pagination from "./Pagination";
-import Affichescategories from "./Affichescategories";
-
-const Listscategories = () => {
+} from "../../features/categorieSlice";
+import Affichecategoriescard from "./Affichecategoriescard";
+import Pagination from "../admin/categories/Pagination";
+const Listcategoriescard = () => {
   const dispatch = useDispatch();
   const { page, limit, searchTerm } = useSelector(
-    (state) => state.storescategories
+    (state) => state.storecategories
   );
 
-  const loadscategories = async () => {
-    await dispatch(getScategoriesPagination());
+  const loadcategories = async () => {
+    await dispatch(getCategoriesPagination());
   };
 
   useEffect(() => {
-    loadscategories();
+    loadcategories();
   }, [dispatch, page, limit, searchTerm]);
 
   const handleLimitChange = (event) => {
@@ -31,7 +28,7 @@ const Listscategories = () => {
 
   return (
     <div>
-      <Affichescategories />
+      <Affichecategoriescard />
       <div style={{ display: "flex", justifyContent: "right" }}>
         <div className="limit-selector-container">
           <label>
@@ -55,4 +52,4 @@ const Listscategories = () => {
   );
 };
 
-export default Listscategories;
+export default Listcategoriescard;

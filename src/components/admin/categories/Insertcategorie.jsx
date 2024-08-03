@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Insertcategorie = () => {
-  return (
-    <div>
-      Insertion catégorie
-    </div>
-  )
-}
+  return <div>Insertion catégorie</div>;
+};
 
-export default Insertcategorie
+export default Insertcategorie;

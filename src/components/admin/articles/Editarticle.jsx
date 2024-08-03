@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Editarticle = () => {
-  return (
-    <div>
-      Modifier article
-    </div>
-  )
-}
+  return <div>Modifier article</div>;
+};
 
-export default Editarticle
+export default Editarticle;

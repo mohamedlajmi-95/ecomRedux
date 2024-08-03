@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Editscategorie = () => {
-  return (
-    <div>
-      modifier une sous catégorie
-    </div>
-  )
-}
+  return <div>modifier une sous catégorie</div>;
+};
 
-export default Editscategorie
+export default Editscategorie;

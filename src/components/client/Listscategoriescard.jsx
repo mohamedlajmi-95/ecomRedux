@@ -1,19 +1,16 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
-  getScategories,
+  getCategoriesPagination,
   setLimit,
   setPage,
-  getScategoriesPagination,
-} from "../../../features/scategorieSlice";
-import { useDispatch, useSelector } from "react-redux";
-
-import Pagination from "./Pagination";
-import Affichescategories from "./Affichescategories";
-
-const Listscategories = () => {
+} from "../../features/categorieSlice";
+import Affichescategoriescard from "./Affichescategoriescard";
+import Pagination from "../admin/categories/Pagination";
+const Listscategoriescard = () => {
   const dispatch = useDispatch();
   const { page, limit, searchTerm } = useSelector(
-    (state) => state.storescategories
+    (state) => state.storearticles
   );
 
   const loadscategories = async () => {
@@ -31,7 +28,7 @@ const Listscategories = () => {
 
   return (
     <div>
-      <Affichescategories />
+      <Affichescategoriescard />
       <div style={{ display: "flex", justifyContent: "right" }}>
         <div className="limit-selector-container">
           <label>
@@ -55,4 +52,4 @@ const Listscategories = () => {
   );
 };
 
-export default Listscategories;
+export default Listscategoriescard;

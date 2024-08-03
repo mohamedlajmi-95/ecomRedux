@@ -1,5 +1,5 @@
-import axios from 'axios'
+import axios from "axios";
 
 export default axios.create({
-baseURL:" https://ecombackend-rouge.vercel.app/api/"
-})
+  baseURL: " https://ecombackend-beta.vercel.app/api/",
+});
